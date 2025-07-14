@@ -1,4 +1,4 @@
-# Exercise 3.10
+# Exercise 3.10 - 3.11 (Full Stack Phonebook)
 base url: https://phonebook-backend-cris.onrender.com
 
 ## Requests
