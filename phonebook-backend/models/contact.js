@@ -18,10 +18,17 @@ const contactSchema = new mongoose.Schema({
     number: String,
 })
 
+contactSchema.pre('save', function (next) {
+    if (!this.id) {
+        this.id = this._id.toString()
+    }
+    next()
+})
+
 contactSchema.set('toJSON', {
     transform: (document, returnedObject) => {
         returnedObject.id = returnedObject._id.toString()
-        // delete returnedObject._id
+        delete returnedObject._id
         delete returnedObject.__v
     }
 })
